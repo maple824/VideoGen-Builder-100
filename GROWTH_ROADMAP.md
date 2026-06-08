@@ -1,16 +1,18 @@
 # GROWTH_ROADMAP
 
-本文件记录 `VideoGen Builder 100` 的能力成长路线。
+本文件记录 `VideoGen-Builder-100` 的能力成长路线。
 
 `COURSE_MAP.md` 关注“每天学什么”。
 `PROJECTS.md` 关注“最终做出什么”。
 `GROWTH_ROADMAP.md` 关注“能力如何逐步成长”。
 
+本文件不是每日任务清单，也不是实际学习记录。它用于说明 100 天学习过程中，学习者应逐步建立哪些能力，以及每个阶段完成后应达到什么水平。
+
 ---
 
 ## 总体成长目标
 
-通过 100 天学习，我希望从一个视频生成方向的初学者，逐步成长为能够独立完成以下任务的人：
+通过 100 天学习，学习者应从视频生成方向的初学者，逐步成长为能够独立完成以下任务的人：
 
 * 能搭建可复现的 Python / GitHub 项目
 * 能处理视频、图片、音频等多媒体素材
@@ -78,12 +80,6 @@ Phase 1：Day004-Day014
 * [ ] 写出简单测试
 * [ ] 形成第一个 CLI 小工具
 
-## 代表项目
-
-```text
-Asset Scanner CLI
-```
-
 ---
 
 # Layer 2：视频工程基础
@@ -127,12 +123,6 @@ Phase 2：Day015-Day028
 * [ ] 处理一批视频文件
 * [ ] 记录视频处理 metadata
 
-## 代表项目
-
-```text
-Video Preprocess CLI
-```
-
 ---
 
 # Layer 3：图像与视频分析基础
@@ -172,12 +162,6 @@ Phase 3：Day029-Day042
 * [ ] 观察画面变化
 * [ ] 生成缩略图展示
 * [ ] 输出基础视频分析报告
-
-## 代表项目
-
-```text
-Video Frame Analyzer
-```
 
 ---
 
@@ -222,12 +206,6 @@ Phase 4：Day043-Day056
 * [ ] 保存和加载模型
 * [ ] 编写推理脚本
 * [ ] 记录模型实验结果
-
-## 代表项目
-
-```text
-Frame Classifier
-```
 
 ---
 
@@ -282,14 +260,6 @@ Phase 7：Day085-Day092
 * [ ] 整理失败案例
 * [ ] 保存和复用 ComfyUI workflow
 
-## 代表项目
-
-```text
-Mini Diffusion Lab
-Text / Image-to-Video Lab
-ComfyUI Workflow Zoo
-```
-
 ---
 
 # Layer 6：作品集与公开展示
@@ -328,20 +298,13 @@ Phase 8：Day093-Day100
 * [ ] 写出 2 分钟项目介绍
 * [ ] 发布 v1.0 release
 
-## 代表项目
-
-```text
-VideoGen Evaluation Dashboard
-GitHub Pages Portfolio
-```
-
 ---
 
 # 阶段性能力检查
 
 ## Day014 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] Python 脚本基础能力
 * [ ] CLI 参数解析能力
@@ -355,7 +318,7 @@ GitHub Pages Portfolio
 
 ## Day028 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] FFmpeg 基础能力
 * [ ] 视频信息读取能力
@@ -369,7 +332,7 @@ GitHub Pages Portfolio
 
 ## Day042 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] OpenCV 图片读取能力
 * [ ] OpenCV 视频读取能力
@@ -383,7 +346,7 @@ GitHub Pages Portfolio
 
 ## Day056 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] PyTorch Tensor 基础
 * [ ] Dataset / DataLoader 基础
@@ -398,7 +361,7 @@ GitHub Pages Portfolio
 
 ## Day070 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] 生成模型基本概念
 * [ ] Diffusion 基本流程理解
@@ -411,7 +374,7 @@ GitHub Pages Portfolio
 
 ## Day084 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] Diffusers 基础使用能力
 * [ ] 图像生成实验能力
@@ -425,7 +388,7 @@ GitHub Pages Portfolio
 
 ## Day092 检查点
 
-我应该已经具备：
+完成这一阶段后，学习者应具备：
 
 * [ ] ComfyUI 基础使用能力
 * [ ] workflow JSON 管理能力
@@ -438,7 +401,7 @@ GitHub Pages Portfolio
 
 ## Day100 检查点
 
-项目应当具备：
+完成这一阶段后，项目应当具备：
 
 * [ ] 完整 100 天学习路线
 * [ ] 多个可运行脚本
@@ -461,16 +424,4 @@ GitHub Pages Portfolio
 | 可解释性 | 是否能说明代码和实验的目的      | 1-5 |
 | 工程性  | 文件结构、命名、日志、异常是否合理  | 1-5 |
 | 展示性  | 是否适合放到 GitHub 给别人看 | 1-5 |
-
----
-
-# 当前状态
-
-| Layer   | 状态  | 说明                             |
-| ------- | --- | ------------------------------ |
-| Layer 1 | 进行中 | 已完成项目启动和模板建设，下一步进入 Python 工程基础 |
-| Layer 2 | 未开始 | 视频工程基础                         |
-| Layer 3 | 未开始 | 图像与视频分析基础                      |
-| Layer 4 | 未开始 | 深度学习基础                         |
-| Layer 5 | 未开始 | 生成模型与视频生成实验                    |
-| Layer 6 | 未开始 | 作品集与公开展示                       |
+                   |

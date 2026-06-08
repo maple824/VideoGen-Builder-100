@@ -1,10 +1,10 @@
-# VideoGen Builder 100
+# VideoGen-Builder-100
 
-一个面向视频生成方向的 100 天开源学习项目。
+一个面向“视频生成方向”的 100 天开源学习项目。
 
-本项目不是简单整理模型链接，也不是只记录提示词实验，而是希望通过 100 天的持续实践，系统建立视频生成方向所需的基础能力、工程能力和作品集能力。
+本项目不是模型清单，也不是提示词合集，而是一条从 Python 工程、视频处理、图像与视频分析、深度学习、生成模型、Diffusers、ComfyUI、视频生成评估，到 GitHub 作品集发布的完整工程化学习路径。
 
-项目目标是：从 Python 工程基础、视频处理基础、图像与视频分析、深度学习基础、生成模型基础，逐步进入 Diffusers、视频生成模型推理、ComfyUI 工作流、视频生成评估与 GitHub 作品集发布。
+项目目标是通过 100 天连续实践，建立一套可以复现、可以解释、可以持续扩展、可以公开展示的视频生成学习仓库。
 
 ---
 
@@ -14,15 +14,15 @@
 
 * Python 脚本与工程组织能力
 * Git / GitHub 项目管理能力
-* FFmpeg 视频处理能力
+* 视频文件与 FFmpeg 工具链基础
 * OpenCV 图像与视频分析能力
 * PyTorch 深度学习基础
-* Diffusion / Latent Diffusion 生成模型基础
+* 生成模型与 Diffusion 基础
 * Diffusers 图像与视频生成实验能力
 * ComfyUI 工作流搭建与管理能力
 * 视频生成结果评估与作品集整理能力
 
-本项目的重点不是“尽快跑一个大模型”，而是建立一条可以复现、可以解释、可以持续扩展的学习路径。
+本项目的重点不是“尽快跑一个大模型”，而是建立一条面向新手读者也能理解的学习路径：每天为什么学、怎么学、做什么、产出什么，以及这些产出如何逐步组成最终作品集。
 
 ---
 
@@ -32,7 +32,7 @@
 
 * 想系统进入视频生成方向的学习者
 * Python 基础不够稳，但希望通过项目练习补齐工程能力的人
-* 想把学习过程沉淀成 GitHub 项目作品集的人
+* 想把学习过程沉淀成 GitHub 作品集的人
 * 想从图像生成逐步过渡到视频生成的人
 * 想理解视频生成背后基础工具链的人
 
@@ -55,6 +55,58 @@
 5. 大文件、模型权重、视频输出不直接提交到 Git 仓库。
 6. 所有重要步骤都尽量可复现。
 7. 学习记录要能服务于后续作品集展示。
+8. 每个阶段最终服务于一个可展示的小项目。
+9. 文档面向外部新手读者，而不是只写给项目作者自己看。
+
+---
+
+## 每日文档体系
+
+Day001-Day003 属于 Phase 0，用于建立项目基线、文档模板和整体路线图。这三天可以保持单文档结构：
+
+```text
+days/day001/README.md
+days/day002/README.md
+days/day003/README.md
+```
+
+从 Day004 开始，正式学习日采用双文档体系：
+
+```text
+days/dayXXX/TASK.md
+days/dayXXX/README.md
+```
+
+其中：
+
+* `TASK.md` 说明当天的学习任务，包括今天学什么、为什么学、前置条件、推荐学习资料、实践任务、今日产物、完成标准和常见误区。
+* `README.md` 记录当天实际学习过程，包括实际做了什么、创建或修改了哪些文件、运行了哪些命令、得到什么结果、遇到什么问题、关键理解、总结和下一步。
+
+---
+
+## 脚本存放约定
+
+Phase 0 的仓库级环境检查脚本可以保留在 `scripts/` 根目录下，例如：
+
+```text
+scripts/check_env.py
+```
+
+从 Day004 开始，如果某一天需要写脚本，脚本必须放在当天对应目录下：
+
+```text
+scripts/dayXXX/
+```
+
+例如：
+
+```text
+scripts/day004/hello_project.py
+scripts/day005/file_scanner.py
+scripts/day006/cli_args_demo.py
+```
+
+如果某一天没有脚本任务，就不需要创建对应的 `scripts/dayXXX/` 目录。
 
 ---
 
@@ -68,30 +120,39 @@
 | Day002 | 仓库规范与每日学习模板 | 建立统一的每日记录模板                    |
 | Day003 | 项目路线图与任务索引  | 完成课程地图和项目索引初版                  |
 
+阶段产物：
+
+* 项目根目录 README
+* 每日学习文档模板
+* 100 天路线图
+* 项目作品规划
+* 基础环境检查脚本
+
 ---
 
 ### Phase 1：Python 工程基础
 
-| Day    | 主题              | 目标                          |
-| ------ | --------------- | --------------------------- |
-| Day004 | Python 脚本结构     | 理解项目脚本的基本组织方式               |
-| Day005 | 路径与文件扫描         | 扫描素材目录并输出文件列表               |
-| Day006 | argparse 命令行参数  | 支持 `--input`、`--output` 等参数 |
-| Day007 | JSON / YAML 配置  | 用配置文件管理项目参数                 |
-| Day008 | logging 日志系统    | 保存脚本运行日志                    |
-| Day009 | 异常处理            | 处理文件不存在、路径错误、格式错误           |
-| Day010 | 函数拆分            | 将脚本逻辑拆成可复用函数                |
-| Day011 | Python 包结构      | 建立 `src/videogen_builder/`  |
-| Day012 | pytest 最小测试     | 为工具函数写测试                    |
-| Day013 | requirements 管理 | 规范依赖管理方式                    |
-| Day014 | 素材扫描 CLI        | 完成第一个小型命令行工具                |
+| Day    | 主题                | 目标                          |
+| ------ | ----------------- | --------------------------- |
+| Day004 | Python 脚本结构       | 理解项目脚本的基本组织方式               |
+| Day005 | 路径与文件扫描           | 扫描素材目录并输出文件列表               |
+| Day006 | argparse 命令行参数    | 支持 `--input`、`--output` 等参数 |
+| Day007 | JSON / YAML 配置    | 用配置文件管理项目参数                 |
+| Day008 | logging 日志系统      | 保存脚本运行日志                    |
+| Day009 | 异常处理              | 处理文件不存在、路径错误、格式错误           |
+| Day010 | 函数拆分              | 将脚本逻辑拆成可复用函数                |
+| Day011 | Python 包结构        | 建立 `src/videogen_builder/`  |
+| Day012 | pytest 最小测试       | 为工具函数写测试                    |
+| Day013 | requirements 管理   | 规范依赖管理方式                    |
+| Day014 | Asset Scanner CLI | 完成第一个小型命令行项目                |
 
 阶段产物：
 
-* `scripts/scan_assets.py`
+* `scripts/day004/` 至 `scripts/day014/`
 * `src/videogen_builder/`
 * `tests/`
-* 第一个可运行 CLI 小工具
+* `projects/asset_scanner_cli/`
+* Project 01：Asset Scanner CLI
 
 ---
 
@@ -116,11 +177,12 @@
 
 阶段产物：
 
-* `scripts/video_info.py`
-* `scripts/extract_frames.py`
-* `scripts/frames_to_video.py`
-* `scripts/preprocess_video.py`
+* `scripts/day015/` 至 `scripts/day028/`
 * `projects/video_preprocess_cli/`
+* 视频信息读取工具
+* 视频抽帧与合成工具
+* 批量视频预处理工具
+* Project 02：Video Preprocess CLI
 
 ---
 
@@ -148,6 +210,7 @@
 * `projects/video_frame_analyzer/`
 * 视频关键帧提取工具
 * 视频分析报告生成脚本
+* Project 03：Video Frame Analyzer
 
 ---
 
@@ -175,6 +238,7 @@
 * `projects/frame_classifier/`
 * PyTorch 最小训练与推理脚本
 * 模型实验记录模板
+* Project 04：Frame Classifier
 
 ---
 
@@ -202,6 +266,7 @@
 * `projects/mini_diffusion_lab/`
 * 生成实验记录规范
 * Prompt / seed / steps 对比实验
+* Project 05：Mini Diffusion Lab
 
 ---
 
@@ -229,6 +294,7 @@
 * `projects/text_image_to_video_lab/`
 * 视频生成参数实验表
 * 生成结果 metadata
+* Project 06：Text / Image-to-Video Lab
 
 ---
 
@@ -250,6 +316,7 @@
 * `projects/comfyui_workflow_zoo/`
 * `examples/workflows/`
 * 可复用 workflow JSON
+* Project 07：ComfyUI Workflow Zoo
 
 ---
 
@@ -268,25 +335,30 @@
 
 阶段产物：
 
-* `projects/video_evaluation_dashboard/`
+* `projects/videogen_evaluation_dashboard/`
 * `docs/`
 * GitHub Pages
 * v1.0 release
+* Project 08：VideoGen Evaluation Dashboard
+* Project 09：GitHub Pages Portfolio
 
 ---
 
 ## 预期最终作品
 
-项目完成后，仓库应至少包含以下作品：
+项目完成后，仓库应至少包含以下 9 个作品：
 
-1. Video Preprocess CLI
-2. Video Frame Analyzer
-3. Frame Classifier
-4. Mini Diffusion Lab
-5. Text / Image-to-Video Lab
-6. ComfyUI Workflow Zoo
-7. VideoGen Evaluation Dashboard
-8. GitHub Pages 项目展示页
+1. Project 01：Asset Scanner CLI
+2. Project 02：Video Preprocess CLI
+3. Project 03：Video Frame Analyzer
+4. Project 04：Frame Classifier
+5. Project 05：Mini Diffusion Lab
+6. Project 06：Text / Image-to-Video Lab
+7. Project 07：ComfyUI Workflow Zoo
+8. Project 08：VideoGen Evaluation Dashboard
+9. Project 09：GitHub Pages Portfolio
+
+这些作品共同服务于一个目标：让外部读者不仅能看到学习记录，也能看到逐步积累出来的工程能力、实验能力和公开展示能力。
 
 ---
 
@@ -303,14 +375,35 @@ VideoGen-Builder-100/
 ├── days/
 │   ├── day001/
 │   │   └── README.md
+│   ├── day002/
+│   │   └── README.md
+│   ├── day003/
+│   │   └── README.md
+│   ├── day004/
+│   │   ├── TASK.md
+│   │   └── README.md
 │   └── ...
 ├── scripts/
 │   ├── check_env.py
+│   ├── day004/
+│   │   └── hello_project.py
+│   ├── day005/
+│   │   └── file_scanner.py
 │   └── ...
 ├── src/
 │   └── videogen_builder/
 ├── tests/
+├── projects/
+│   ├── asset_scanner_cli/
+│   ├── video_preprocess_cli/
+│   ├── video_frame_analyzer/
+│   ├── frame_classifier/
+│   ├── mini_diffusion_lab/
+│   ├── text_image_to_video_lab/
+│   ├── comfyui_workflow_zoo/
+│   └── videogen_evaluation_dashboard/
 ├── examples/
+│   └── workflows/
 ├── assets/
 ├── outputs/
 └── docs/
@@ -327,30 +420,32 @@ VideoGen-Builder-100/
 * [x] 修复 `videogen` conda 环境
 * [x] 创建环境检查脚本
 * [x] 完成 Day001 项目基线
+* [x] 完成 Day002 仓库规范与每日学习模板
+* [x] 完成 Day003 项目路线图与任务索引
+* [ ] 从 Day004 开始进入正式学习日双文档体系
 
 ---
 
-## 本地运行
+## 基础环境检查
 
-克隆仓库后，进入项目目录：
+本项目会逐步使用 Git、Python、Conda、FFmpeg、OpenCV、PyTorch、Diffusers 和 ComfyUI。不同阶段对工具的要求不同，不需要在 Day001 一次性安装全部工具。
 
-```bash
-cd VideoGen-Builder-100
-```
+| 工具              | 是否必须        | 主要使用阶段 | 检查命令                                   | 未安装时常见现象                       | 安装或文档链接                                                       |
+| --------------- | ----------- | ------ | -------------------------------------- | ------------------------------ | ------------------------------------------------------------- |
+| Git             | 必须          | 全项目    | `git --version`                        | 无法克隆仓库、提交版本或推送 GitHub          | https://git-scm.com/book/en/v2/Getting-Started-Installing-Git |
+| Python          | 必须          | 全项目    | `python --version`                     | 无法运行 `.py` 脚本                  | https://www.python.org/downloads/                             |
+| Conda           | 推荐          | 全项目    | `conda --version`                      | 无法使用 `conda activate videogen` | https://docs.conda.io/projects/miniconda/en/latest/           |
+| FFmpeg          | Phase 2 后需要 | 视频处理   | `ffmpeg -version` 和 `ffprobe -version` | 无法读取视频信息、抽帧、合成视频               | https://ffmpeg.org/download.html                              |
+| Python packages | 按阶段需要       | 全项目    | `pip list`                             | 运行脚本时出现 `ModuleNotFoundError`  | 使用本仓库 `requirements.txt`                                      |
+| ComfyUI         | Phase 7 需要  | 工作流实验  | 按官方文档启动                                | 无法进行节点式工作流实验                   | https://github.com/comfyanonymous/ComfyUI                     |
 
-激活环境：
-
-```bash
-conda activate videogen
-```
-
-运行环境检查脚本：
+运行仓库级环境检查脚本：
 
 ```bash
 python scripts/check_env.py
 ```
 
-预期输出包括：
+预期输出应包含：
 
 ```text
 VideoGen Builder 100 - 环境检查
@@ -361,6 +456,8 @@ Python 可执行文件
 项目根目录
 Conda 环境
 ```
+
+如果出现 `python: command not found`、`conda: command not found` 或 `ModuleNotFoundError`，说明当前环境还没有正确配置，需要先完成对应工具或依赖安装。
 
 ---
 
@@ -396,6 +493,7 @@ Conda 环境
 ```text
 chore: initialize project structure
 docs: add day001 environment baseline
+docs: add day004 task and learning record
 feat: add asset scanner
 fix: handle missing input path
 test: add path utility tests
@@ -404,20 +502,15 @@ refactor: split video utils
 
 ---
 
-## 项目目标
+## 项目最终希望展示什么
 
 这个仓库最终希望展示的不只是“我学过视频生成”，而是：
 
 * 我能搭建可复现的 AI 项目环境
+* 我能组织长期学习型 GitHub 仓库
 * 我能处理视频数据
 * 我能理解图像和视频的基本表示
 * 我能运行和记录生成模型实验
 * 我能管理 ComfyUI 工作流
 * 我能评估视频生成结果
 * 我能把学习过程整理成公开作品集
-
----
-
-## License
-
-待定。

@@ -1,8 +1,8 @@
 # COURSE_MAP
 
-本文件记录 `VideoGen Builder 100` 的 100 天学习路线。
+本文件记录 `VideoGen-Builder-100` 的 100 天学习路线。
 
-本路线不是模型清单，也不是工具堆叠，而是按照能力成长顺序设计：
+本路线不是模型清单，也不是工具堆叠，而是按照能力成长顺序设计的一条工程化学习路径：
 
 ```text
 项目启动
@@ -15,6 +15,8 @@ Diffusers 图像与视频生成
 ComfyUI 工作流
 评估、作品集与发布
 ```
+
+这条路线的目标是让学习者从可复现的项目环境开始，逐步积累视频生成方向所需的工程能力、实验能力和作品集展示能力。
 
 ---
 
@@ -34,6 +36,56 @@ ComfyUI 工作流
 
 ---
 
+## 每日文档规则
+
+Day001-Day003 属于 Phase 0，用于建立项目基线、文档模板和整体路线图。这三天可以保持单文档结构：
+
+```text
+days/day001/README.md
+days/day002/README.md
+days/day003/README.md
+```
+
+从 Day004 开始，正式学习日采用双文档体系：
+
+```text
+days/dayXXX/TASK.md
+days/dayXXX/README.md
+```
+
+其中：
+
+* `TASK.md` 用于说明当天的学习任务，包括今天学什么、为什么学、前置条件、推荐学习资料、实践任务、今日产物、完成标准和常见误区。
+* `README.md` 用于记录当天实际学习过程，包括实际做了什么、创建或修改了哪些文件、运行了哪些命令、得到什么结果、遇到什么问题、关键理解、总结和下一步。
+
+---
+
+## 脚本存放规则
+
+Phase 0 的仓库级环境检查脚本可以保留在 `scripts/` 根目录下，例如：
+
+```text
+scripts/check_env.py
+```
+
+从 Day004 开始，如果某一天需要写脚本，脚本必须放在当天对应目录下：
+
+```text
+scripts/dayXXX/
+```
+
+例如：
+
+```text
+scripts/day004/hello_project.py
+scripts/day005/file_scanner.py
+scripts/day006/cli_args_demo.py
+```
+
+如果某一天没有脚本任务，就不需要创建对应的 `scripts/dayXXX/` 目录。
+
+---
+
 # Phase 0：项目启动与可复现基线
 
 目标：让项目具备可运行、可记录、可提交、可同步的基础条件。
@@ -50,9 +102,9 @@ ComfyUI 工作流
 * [x] GitHub 远程仓库可用
 * [x] Python 环境可用
 * [x] 每日记录模板可用
-* [ ] 100 天路线图完成
-* [ ] 项目作品索引完成
-* [ ] 能力成长路线完成
+* [x] 100 天路线图完成
+* [x] 项目作品索引完成
+* [x] 能力成长路线完成
 
 ---
 
@@ -62,24 +114,24 @@ ComfyUI 工作流
 
 这一阶段不追求复杂算法，重点是写出稳定、可复用、可维护的脚本。
 
-| Day    | 主题              | 核心任务                    | 产物                              |
-| ------ | --------------- | ----------------------- | ------------------------------- |
-| Day004 | Python 脚本结构     | 编写第一个项目脚本               | `scripts/hello_project.py`      |
-| Day005 | 路径与文件扫描         | 扫描素材目录                  | `scripts/list_files.py`         |
-| Day006 | argparse 命令行参数  | 支持 `--input`、`--output` | `scripts/cli_args_demo.py`      |
-| Day007 | JSON / YAML 配置  | 用配置文件管理参数               | `configs/project.yaml`          |
-| Day008 | logging 日志系统    | 保存脚本运行日志                | `scripts/logging_demo.py`       |
-| Day009 | 异常处理            | 处理路径错误、空目录、格式错误         | `scripts/safe_file_check.py`    |
-| Day010 | 函数拆分            | 将脚本拆成函数                 | `src/videogen_builder/utils.py` |
-| Day011 | Python 包结构      | 建立基础包结构                 | `src/videogen_builder/`         |
-| Day012 | pytest 最小测试     | 为工具函数写测试                | `tests/test_paths.py`           |
-| Day013 | requirements 管理 | 规范依赖文件                  | `requirements.txt`              |
-| Day014 | 素材扫描 CLI        | 完成第一个小工具                | `scripts/scan_assets.py`        |
+| Day    | 主题                | 核心任务                    | 产物                                                                |
+| ------ | ----------------- | ----------------------- | ----------------------------------------------------------------- |
+| Day004 | Python 脚本结构       | 编写第一个项目脚本               | `scripts/day004/hello_project.py`                                 |
+| Day005 | 路径与文件扫描           | 扫描素材目录                  | `scripts/day005/file_scanner.py`                                  |
+| Day006 | argparse 命令行参数    | 支持 `--input`、`--output` | `scripts/day006/cli_args_demo.py`                                 |
+| Day007 | JSON / YAML 配置    | 用配置文件管理参数               | `configs/project.yaml`                                            |
+| Day008 | logging 日志系统      | 保存脚本运行日志                | `scripts/day008/logging_demo.py`                                  |
+| Day009 | 异常处理              | 处理路径错误、空目录、格式错误         | `scripts/day009/safe_file_check.py`                               |
+| Day010 | 函数拆分              | 将脚本拆成函数                 | `scripts/day010/refactor_demo.py`、`src/videogen_builder/utils.py` |
+| Day011 | Python 包结构        | 建立基础包结构                 | `src/videogen_builder/`                                           |
+| Day012 | pytest 最小测试       | 为工具函数写测试                | `tests/test_paths.py`                                             |
+| Day013 | requirements 管理   | 规范依赖文件                  | `requirements.txt`                                                |
+| Day014 | Asset Scanner CLI | 完成第一个小型命令行项目            | `projects/asset_scanner_cli/`                                     |
 
 阶段项目：
 
 ```text
-Asset Scanner CLI
+Project 01：Asset Scanner CLI
 ```
 
 阶段完成标准：
@@ -97,30 +149,29 @@ Asset Scanner CLI
 
 目标：理解视频文件的基本结构，并掌握 FFmpeg / ffprobe 的常用能力。
 
-这一阶段解决一个核心问题：
-视频生成不是只和模型有关，输入输出视频本身也需要工程处理能力。
+这一阶段解决一个核心问题：视频生成不是只和模型有关，输入输出视频本身也需要工程处理能力。
 
-| Day    | 主题                   | 核心任务                             | 产物                               |
-| ------ | -------------------- | -------------------------------- | -------------------------------- |
-| Day015 | 视频文件基础               | 理解容器、编码、fps、分辨率                  | 视频基础笔记                           |
-| Day016 | FFmpeg 环境检查          | 检查 FFmpeg / ffprobe 是否可用         | `scripts/check_ffmpeg.py`        |
-| Day017 | ffprobe 读取视频信息       | 输出 duration、fps、codec、resolution | `scripts/video_info.py`          |
-| Day018 | 视频抽帧                 | 将视频拆成图片帧                         | `scripts/extract_frames.py`      |
-| Day019 | 帧合成视频                | 将图片帧合成视频                         | `scripts/frames_to_video.py`     |
-| Day020 | 视频裁剪                 | 截取指定时间段                          | `scripts/trim_video.py`          |
-| Day021 | resize 与格式转换         | 统一分辨率和格式                         | `scripts/resize_video.py`        |
-| Day022 | 视频转 GIF              | 生成轻量展示文件                         | `scripts/video_to_gif.py`        |
-| Day023 | 音频提取                 | 从视频中提取音频                         | `scripts/extract_audio.py`       |
-| Day024 | 添加文字与水印              | 给视频添加基础标注                        | `scripts/add_watermark.py`       |
-| Day025 | 批量视频预处理              | 批处理多个视频文件                        | `scripts/batch_preprocess.py`    |
-| Day026 | metadata 记录          | 生成视频处理清单                         | `outputs/manifest.csv`           |
-| Day027 | 错误案例整理               | 记录坏文件、空目录、编码异常                   | Debug 记录                         |
-| Day028 | Video Preprocess CLI | 整合视频预处理工具                        | `projects/video_preprocess_cli/` |
+| Day    | 主题                   | 核心任务                             | 产物                                   |
+| ------ | -------------------- | -------------------------------- | ------------------------------------ |
+| Day015 | 视频文件基础               | 理解容器、编码、fps、分辨率                  | 视频基础笔记                               |
+| Day016 | FFmpeg 环境检查          | 检查 FFmpeg / ffprobe 是否可用         | `scripts/day016/check_ffmpeg.py`     |
+| Day017 | ffprobe 读取视频信息       | 输出 duration、fps、codec、resolution | `scripts/day017/video_info.py`       |
+| Day018 | 视频抽帧                 | 将视频拆成图片帧                         | `scripts/day018/extract_frames.py`   |
+| Day019 | 帧合成视频                | 将图片帧合成视频                         | `scripts/day019/frames_to_video.py`  |
+| Day020 | 视频裁剪                 | 截取指定时间段                          | `scripts/day020/trim_video.py`       |
+| Day021 | resize 与格式转换         | 统一分辨率和格式                         | `scripts/day021/resize_video.py`     |
+| Day022 | 视频转 GIF              | 生成轻量展示文件                         | `scripts/day022/video_to_gif.py`     |
+| Day023 | 音频提取                 | 从视频中提取音频                         | `scripts/day023/extract_audio.py`    |
+| Day024 | 添加文字与水印              | 给视频添加基础标注                        | `scripts/day024/add_watermark.py`    |
+| Day025 | 批量视频预处理              | 批处理多个视频文件                        | `scripts/day025/batch_preprocess.py` |
+| Day026 | metadata 记录          | 生成视频处理清单                         | `outputs/manifest.csv`               |
+| Day027 | 错误案例整理               | 记录坏文件、空目录、编码异常                   | Debug 记录                             |
+| Day028 | Video Preprocess CLI | 整合视频预处理工具                        | `projects/video_preprocess_cli/`     |
 
 阶段项目：
 
 ```text
-Video Preprocess CLI
+Project 02：Video Preprocess CLI
 ```
 
 阶段完成标准：
@@ -139,27 +190,27 @@ Video Preprocess CLI
 
 目标：掌握 OpenCV 的基础图像和视频处理能力，为后续视频分析、生成结果评估和数据预处理打基础。
 
-| Day    | 主题                   | 核心任务                 | 产物                                 |
-| ------ | -------------------- | -------------------- | ---------------------------------- |
-| Day029 | OpenCV 读取图片          | 读取和保存图片              | `scripts/read_image.py`            |
-| Day030 | OpenCV 读取视频          | 逐帧读取视频               | `scripts/read_video.py`            |
-| Day031 | 色彩空间                 | 理解 RGB、BGR、HSV       | 色彩空间实验                             |
-| Day032 | resize / crop / pad  | 统一图像输入尺寸             | `scripts/image_resize_crop_pad.py` |
-| Day033 | 图像滤波                 | 模糊、锐化、降噪             | 图像滤波 demo                          |
-| Day034 | 边缘检测                 | 使用 Canny 提取边缘        | `scripts/canny_edges.py`           |
-| Day035 | 帧差法                  | 检测画面变化               | `scripts/frame_diff.py`            |
-| Day036 | 关键帧提取                | 从视频中选取代表帧            | `scripts/keyframe_extract.py`      |
-| Day037 | 光流基础                 | 可视化简单运动信息            | `scripts/optical_flow_demo.py`     |
-| Day038 | 视频缩略图                | 生成 contact sheet     | `scripts/contact_sheet.py`         |
-| Day039 | 视频质量基础指标             | 检测亮度、模糊度、分辨率         | `scripts/video_quality_basic.py`   |
-| Day040 | 数据集 manifest         | 建立视频数据索引             | `assets/video_manifest.csv`        |
-| Day041 | 批量分析报告               | 输出 CSV / Markdown 报告 | `outputs/video_analysis_report.md` |
-| Day042 | Video Frame Analyzer | 整合视频帧分析工具            | `projects/video_frame_analyzer/`   |
+| Day    | 主题                   | 核心任务                 | 产物                                        |
+| ------ | -------------------- | -------------------- | ----------------------------------------- |
+| Day029 | OpenCV 读取图片          | 读取和保存图片              | `scripts/day029/read_image.py`            |
+| Day030 | OpenCV 读取视频          | 逐帧读取视频               | `scripts/day030/read_video.py`            |
+| Day031 | 色彩空间                 | 理解 RGB、BGR、HSV       | 色彩空间实验                                    |
+| Day032 | resize / crop / pad  | 统一图像输入尺寸             | `scripts/day032/image_resize_crop_pad.py` |
+| Day033 | 图像滤波                 | 模糊、锐化、降噪             | 图像滤波 demo                                 |
+| Day034 | 边缘检测                 | 使用 Canny 提取边缘        | `scripts/day034/canny_edges.py`           |
+| Day035 | 帧差法                  | 检测画面变化               | `scripts/day035/frame_diff.py`            |
+| Day036 | 关键帧提取                | 从视频中选取代表帧            | `scripts/day036/keyframe_extract.py`      |
+| Day037 | 光流基础                 | 可视化简单运动信息            | `scripts/day037/optical_flow_demo.py`     |
+| Day038 | 视频缩略图                | 生成 contact sheet     | `scripts/day038/contact_sheet.py`         |
+| Day039 | 视频质量基础指标             | 检测亮度、模糊度、分辨率         | `scripts/day039/video_quality_basic.py`   |
+| Day040 | 数据集 manifest         | 建立视频数据索引             | `assets/video_manifest.csv`               |
+| Day041 | 批量分析报告               | 输出 CSV / Markdown 报告 | `outputs/video_analysis_report.md`        |
+| Day042 | Video Frame Analyzer | 整合视频帧分析工具            | `projects/video_frame_analyzer/`          |
 
 阶段项目：
 
 ```text
-Video Frame Analyzer
+Project 03：Video Frame Analyzer
 ```
 
 阶段完成标准：
@@ -176,27 +227,27 @@ Video Frame Analyzer
 
 目标：理解后续生成模型所需的基本深度学习概念，包括张量、数据加载、训练循环、推理和 GPU 使用。
 
-| Day    | 主题                   | 核心任务                  | 产物                            |
-| ------ | -------------------- | --------------------- | ----------------------------- |
-| Day043 | NumPy 与图像数组          | 理解图像如何表示为数组           | NumPy 图像实验                    |
-| Day044 | PyTorch Tensor       | 理解 shape、dtype、device | Tensor demo                   |
-| Day045 | Dataset / DataLoader | 读取图像帧数据               | `datasets/frame_dataset.py`   |
-| Day046 | 简单线性模型               | 跑通最小训练流程              | toy model                     |
-| Day047 | CNN 基础               | 完成小型图像分类模型            | CNN demo                      |
-| Day048 | Loss 与 Optimizer     | 理解训练循环                | training loop                 |
-| Day049 | 保存和加载模型              | 使用 checkpoint         | `outputs/checkpoints/`        |
-| Day050 | GPU 检查               | 检查 CUDA 是否可用          | `scripts/check_torch_cuda.py` |
-| Day051 | 推理脚本                 | 编写模型推理入口              | `scripts/predict.py`          |
-| Day052 | batch 推理             | 对多张图像进行推理             | batch inference               |
-| Day053 | embedding 概念         | 理解向量表示                | embedding notes               |
-| Day054 | CLIP 基础              | 理解文本-图像相似度            | CLIP demo                     |
-| Day055 | 模型实验记录               | 保存参数、结果和 metadata     | experiment metadata           |
-| Day056 | Frame Classifier     | 整合帧分类项目               | `projects/frame_classifier/`  |
+| Day    | 主题                   | 核心任务                  | 产物                                   |
+| ------ | -------------------- | --------------------- | ------------------------------------ |
+| Day043 | NumPy 与图像数组          | 理解图像如何表示为数组           | NumPy 图像实验                           |
+| Day044 | PyTorch Tensor       | 理解 shape、dtype、device | Tensor demo                          |
+| Day045 | Dataset / DataLoader | 读取图像帧数据               | `datasets/frame_dataset.py`          |
+| Day046 | 简单线性模型               | 跑通最小训练流程              | toy model                            |
+| Day047 | CNN 基础               | 完成小型图像分类模型            | CNN demo                             |
+| Day048 | Loss 与 Optimizer     | 理解训练循环                | training loop                        |
+| Day049 | 保存和加载模型              | 使用 checkpoint         | `outputs/checkpoints/`               |
+| Day050 | GPU 检查               | 检查 CUDA 是否可用          | `scripts/day050/check_torch_cuda.py` |
+| Day051 | 推理脚本                 | 编写模型推理入口              | `scripts/day051/predict.py`          |
+| Day052 | batch 推理             | 对多张图像进行推理             | batch inference                      |
+| Day053 | embedding 概念         | 理解向量表示                | embedding notes                      |
+| Day054 | CLIP 基础              | 理解文本-图像相似度            | CLIP demo                            |
+| Day055 | 模型实验记录               | 保存参数、结果和 metadata     | experiment metadata                  |
+| Day056 | Frame Classifier     | 整合帧分类项目               | `projects/frame_classifier/`         |
 
 阶段项目：
 
 ```text
-Frame Classifier
+Project 04：Frame Classifier
 ```
 
 阶段完成标准：
@@ -234,7 +285,7 @@ Frame Classifier
 阶段项目：
 
 ```text
-Mini Diffusion Lab
+Project 05：Mini Diffusion Lab
 ```
 
 阶段完成标准：
@@ -273,7 +324,7 @@ Mini Diffusion Lab
 阶段项目：
 
 ```text
-Text / Image-to-Video Lab
+Project 06：Text / Image-to-Video Lab
 ```
 
 阶段完成标准：
@@ -305,7 +356,7 @@ Text / Image-to-Video Lab
 阶段项目：
 
 ```text
-ComfyUI Workflow Zoo
+Project 07：ComfyUI Workflow Zoo
 ```
 
 阶段完成标准：
@@ -336,8 +387,8 @@ ComfyUI Workflow Zoo
 阶段项目：
 
 ```text
-VideoGen Evaluation Dashboard
-GitHub Pages Portfolio
+Project 08：VideoGen Evaluation Dashboard
+Project 09：GitHub Pages Portfolio
 ```
 
 阶段完成标准：
@@ -353,47 +404,68 @@ GitHub Pages Portfolio
 
 # 最终交付物
 
-100 天结束后，本项目应至少包含以下内容：
+100 天结束后，本项目应至少包含以下 9 个作品：
 
 ```text
-1. Asset Scanner CLI
-2. Video Preprocess CLI
-3. Video Frame Analyzer
-4. Frame Classifier
-5. Mini Diffusion Lab
-6. Text / Image-to-Video Lab
-7. ComfyUI Workflow Zoo
-8. VideoGen Evaluation Dashboard
-9. GitHub Pages Portfolio
+1. Project 01：Asset Scanner CLI
+2. Project 02：Video Preprocess CLI
+3. Project 03：Video Frame Analyzer
+4. Project 04：Frame Classifier
+5. Project 05：Mini Diffusion Lab
+6. Project 06：Text / Image-to-Video Lab
+7. Project 07：ComfyUI Workflow Zoo
+8. Project 08：VideoGen Evaluation Dashboard
+9. Project 09：GitHub Pages Portfolio
 ```
 
 ---
 
 # 使用方式
 
-每开始一个新 Day：
+阅读本文件时，可以先看“总体路线”，再进入具体 Phase 查看每天的主题、核心任务和产物。
 
-1. 在 `days/` 下创建新目录
-2. 从 `docs/day-template.md` 复制每日模板
-3. 根据当天任务填写内容
-4. 完成代码、实验或文档
-5. 记录实际输出
-6. 提交 commit
-7. push 到 GitHub
+开始一个新 Day 时，按以下规则创建文件：
+
+Day001-Day003 使用单文档结构：
+
+```text
+days/day001/README.md
+days/day002/README.md
+days/day003/README.md
+```
+
+Day004 之后使用双文档结构：
+
+```text
+days/dayXXX/TASK.md
+days/dayXXX/README.md
+```
+
+如果当天需要写脚本，则脚本放在当天对应目录下：
+
+```text
+scripts/dayXXX/
+```
 
 示例：
 
 ```bash
 mkdir -p days/day004
-cp docs/day-template.md days/day004/README.md
+mkdir -p scripts/day004
 ```
 
----
+Day004 的文件示例：
 
-# 当前进度
+```text
+days/day004/TASK.md
+days/day004/README.md
+scripts/day004/hello_project.py
+```
 
-| Day    | 状态  | 说明          |
-| ------ | --- | ----------- |
-| Day001 | 已完成 | 项目基线与环境可复现性 |
-| Day002 | 已完成 | 仓库规范与每日学习模板 |
-| Day003 | 进行中 | 项目路线图与任务索引  |
+完成当天学习后，需要：
+
+1. 完成 `TASK.md` 中定义的任务。
+2. 在 `README.md` 中记录实际执行过程和结果。
+3. 保存当天脚本、配置、实验记录或输出说明。
+4. 提交 commit。
+5. push 到 GitHub。

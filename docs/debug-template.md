@@ -2,6 +2,11 @@
 
 > 用途：记录环境配置、依赖安装、脚本运行、模型推理、视频处理过程中遇到的问题。
 > 原则：不要只记录“解决了”，要记录“如何发现、如何判断、如何验证”。
+> 与每日文档体系的关系：
+> 从 Day004 开始，每个正式学习日使用 `TASK.md + README.md` 双文档体系。
+> `TASK.md` 负责说明当天任务，`README.md` 负责记录当天实际学习过程。
+> 本 Debug 模板只用于记录较完整的问题排查过程，不替代当天的 `README.md`。
+> 如果某个问题影响当天学习，应在当天 `README.md` 中简要记录，并在“关联文件”中指向对应 Debug 记录。
 
 ---
 
@@ -176,16 +181,14 @@ python scripts/check_env.py
 说明这个问题对项目的影响。
 
 * [ ] 不影响，只是临时环境问题
-* [ ] 影响当前 Day
+* [ ] 影响当前 Day 的学习记录
+* [ ] 影响当前 Day 的任务说明
 * [ ] 影响后续多个阶段
-* [ ] 需要更新 README 或模板
-* [ ] 需要写入常见问题
-
-说明：
-
-```text
-待填写
-```
+* [ ] 需要更新当天 `README.md`
+* [ ] 需要更新当天 `TASK.md`
+* [ ] 需要更新项目 README
+* [ ] 需要更新 `docs/` 下的模板
+* [ ] 需要写入常见问题或 Debug 索引
 
 ---
 
@@ -202,13 +205,17 @@ python scripts/check_env.py
 
 ## 关联文件
 
+示例 1：Day004 之后的正式学习日问题
+
 ```text
-待填写
+days/day004/TASK.md
+days/day004/README.md
+scripts/day004/hello_project.py
 ```
 
-示例：
+示例 2：项目阶段问题
 
 ```text
-scripts/check_env.py
-days/day001/README.md
+projects/asset_scanner_cli/README.md
+projects/asset_scanner_cli/scripts/scan_assets.py
 ```

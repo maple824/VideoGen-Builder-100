@@ -161,15 +161,13 @@ device:
 
 ### 输出文件
 
-```text
-待填写
-```
-
 示例：
 
 ```text
 outputs/experiments/EXP-20260604-001/result.mp4
+outputs/experiments/EXP-20260604-001/metadata.md
 outputs/experiments/EXP-20260604-001/metadata.json
+
 ```
 
 ### 运行耗时
@@ -275,14 +273,28 @@ outputs/experiments/EXP-20260604-001/metadata.json
 
 ## 关联文件
 
-```text
-待填写
-```
 
 示例：
 
 ```text
-scripts/run_i2v.py
-outputs/experiments/EXP-20260604-001/metadata.json
+示例 1：每日实验脚本
+
+scripts/day080/run_i2v.py
+days/day080/TASK.md
 days/day080/README.md
+outputs/experiments/EXP-20260604-001/metadata.md
+
+示例 2：阶段项目整合脚本
+
+projects/text_image_to_video_lab/scripts/run_i2v.py
+projects/text_image_to_video_lab/configs/i2v_example.yaml
+projects/text_image_to_video_lab/docs/experiment-log.md
+outputs/experiments/EXP-20260604-001/metadata.json
+
+示例 3：ComfyUI workflow 实验
+
+examples/workflows/i2v_basic.json
+days/day088/TASK.md
+days/day088/README.md
+outputs/experiments/EXP-20260604-002/metadata.md
 ```

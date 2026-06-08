@@ -340,9 +340,9 @@ days/day003/README.md
 
 ---
 
-### 6.4 创建或更新 `COURSE_MAP.md`
+### 6.4 创建 `COURSE_MAP.md`
 
-在项目根目录创建或更新：
+在项目根目录创建：
 
 ```text
 COURSE_MAP.md
@@ -388,9 +388,9 @@ Phase 8：Day093-Day100
 
 ---
 
-### 6.5 创建或更新 `PROJECTS.md`
+### 6.5 创建 `PROJECTS.md`
 
-在项目根目录创建或更新：
+在项目根目录创建：
 
 ```text
 PROJECTS.md
@@ -435,9 +435,9 @@ Project 09：GitHub Pages Portfolio
 
 ---
 
-### 6.6 创建或更新 `GROWTH_ROADMAP.md`
+### 6.6 创建 `GROWTH_ROADMAP.md`
 
-在项目根目录创建或更新：
+在项目根目录创建：
 
 ```text
 GROWTH_ROADMAP.md

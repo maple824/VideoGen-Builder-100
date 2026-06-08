@@ -176,140 +176,277 @@ Day002 当天学习记录。
 
 ## 4. 新手照做步骤
 
-### 第一步：进入项目目录
+### 4.1 用 VS Code 打开项目文件夹
 
-在终端执行：
+用 VS Code 打开自己的 `VideoGen-Builder-100` 项目文件夹。
 
-```bash
-cd /root/Workspace/VideoGen-Builder-100
-```
-
-说明：
-
-后续所有文件都应该在这个项目目录下创建。
+Day002 主要是创建文档模板，不需要写 Python 脚本，也不需要运行 Python 程序。
 
 ---
 
-### 第二步：确认当前项目结构
+### 4.2 创建 Day002 学习记录文件
 
-执行：
-
-```bash
-ls
-```
-
-应该能看到类似内容：
-
-```text
-README.md
-COURSE_MAP.md
-PROJECTS.md
-GROWTH_ROADMAP.md
-days
-docs
-scripts
-```
-
-如果没有看到这些文件或目录，说明当前不在项目根目录。
-
----
-
-### 第三步：确认 Day002 目录存在
-
-执行：
-
-```bash
-ls days
-```
-
-应该能看到：
-
-```text
-day001
-day002
-day003
-```
-
-如果没有 `day002`，需要创建目录：
-
-```bash
-mkdir -p days/day002
-```
-
----
-
-### 第四步：确认 docs 目录存在
-
-执行：
-
-```bash
-ls docs
-```
-
-如果 `docs` 目录不存在，可以创建：
-
-```bash
-mkdir -p docs
-```
-
-Day002 的三个模板文件都放在 `docs/` 目录下。
-
----
-
-### 第五步：创建三个模板文件
-
-需要创建：
-
-```text
-docs/day-template.md
-docs/debug-template.md
-docs/experiment-metadata-template.md
-```
-
-这三个文件不是代码文件，而是 Markdown 文档。
-
-它们的作用是规范后续学习记录。
-
----
-
-### 第六步：创建 Day002 README
-
-需要创建：
+在 VS Code 左侧文件管理器中创建：
 
 ```text
 days/day002/README.md
 ```
 
-这个文件记录 Day002 当天做了什么。
+这个文件用于记录 Day002 当天做了什么、为什么做、最终产出了哪些模板。
 
-它不是模板文件，而是 Day002 的学习记录。
+它不是通用模板，而是 Day002 这一天的学习记录。
 
 ---
 
-### 第七步：检查文件是否创建成功
+### 4.3 创建每日学习模板
 
-执行：
+在 VS Code 左侧文件管理器中创建：
+
+```text
+docs/day-template.md
+```
+
+这个文件是后续每天写 README 时可以参考的模板。
+
+它应该帮助每天的学习记录保持统一，例如记录：
+
+```text
+今日主题
+今日目标
+今日文件
+今日任务
+执行步骤
+运行结果
+问题记录
+今日总结
+下一步
+```
+
+后续写：
+
+```text
+days/day003/README.md
+days/day004/README.md
+days/day005/README.md
+```
+
+都可以参考这个模板。
+
+---
+
+### 4.4 创建 Debug 记录模板
+
+在 VS Code 左侧文件管理器中创建：
+
+```text
+docs/debug-template.md
+```
+
+这个文件用于记录后续学习中遇到的错误和排障过程。
+
+它应该帮助你记录清楚：
+
+```text
+问题发生在哪一步
+执行了什么命令或代码
+完整报错是什么
+当前环境是什么
+尝试过哪些解决方法
+最终如何解决
+下次如何避免
+```
+
+后续遇到 Python、FFmpeg、OpenCV、PyTorch、Diffusers、ComfyUI 等问题时，都可以参考这个模板。
+
+---
+
+### 4.5 创建实验 metadata 模板
+
+在 VS Code 左侧文件管理器中创建：
+
+```text
+docs/experiment-metadata-template.md
+```
+
+这个文件用于记录后续生成实验的参数和结果。
+
+后续做图像生成或视频生成实验时，不应该只保存生成结果，还应该记录生成过程。
+
+这个模板应该帮助你记录：
+
+```text
+实验名称
+实验时间
+模型名称
+输入 prompt
+negative prompt
+seed
+steps
+guidance scale
+输入文件路径
+输出文件路径
+运行时间
+是否成功
+失败原因
+主观观察结果
+```
+
+这样以后看到一个生成结果时，才能知道它是怎么生成出来的。
+
+---
+
+### 4.6 检查三个模板的职责是否清楚
+
+创建完三个模板后，分别打开它们，检查职责是否混乱。
+
+可以按下面方式判断：
+
+```text
+docs/day-template.md
+```
+
+应该回答：
+
+```text
+每天的学习记录怎么写？
+```
+
+```text
+docs/debug-template.md
+```
+
+应该回答：
+
+```text
+遇到问题时怎么记录？
+```
+
+```text
+docs/experiment-metadata-template.md
+```
+
+应该回答：
+
+```text
+做生成实验时怎么记录参数和结果？
+```
+
+如果三个文件的内容互相重复太多，说明模板职责还不够清晰，需要调整。
+
+---
+
+### 4.7 完成 Day002 README
+
+回到：
+
+```text
+days/day002/README.md
+```
+
+补充 Day002 的完整记录。
+
+它应该说明：
+
+```text
+今天为什么要创建模板
+创建了哪些模板
+每个模板的用途是什么
+这些模板后续会在哪些阶段使用
+Day002 和后续 100 天学习有什么关系
+```
+
+Day002 README 的重点不是写得很长，而是让读者明白：
+
+```text
+Day002 是在为后续学习建立记录规范。
+```
+
+---
+
+### 4.8 Day002 不需要创建脚本目录
+
+Day002 是文档规范建设日，不需要写 Python 脚本。
+
+因此不需要创建：
+
+```text
+scripts/day002/
+```
+
+本项目约定：
+
+```text
+只有当天确实需要写脚本时，才创建 scripts/dayXXX/ 目录。
+```
+
+例如：
+
+```text
+scripts/day001/check_env.py
+scripts/day004/hello_project.py
+scripts/day005/file_scanner.py
+```
+
+Day002 没有脚本任务，所以不创建 `scripts/day002/`。
+
+---
+
+### 4.9 提交 Day002 改动
+
+Day002 完成后，把新增文档提交到 Git。
+
+本次通常涉及这些文件：
+
+```text
+days/day002/README.md
+docs/day-template.md
+docs/debug-template.md
+docs/experiment-metadata-template.md
+```
+
+可以在 VS Code 终端中执行：
 
 ```bash
-ls docs
-ls days/day002
+git status
 ```
 
-预期至少能看到：
+确认本次改动只包含 Day002 相关文件后，执行：
+
+```bash
+git add days/day002/README.md docs/day-template.md docs/debug-template.md docs/experiment-metadata-template.md
+git commit -m "docs: add day002 templates"
+git push origin main
+```
+
+如果你确认当前所有改动都属于 Day002，也可以使用：
+
+```bash
+git add .
+git commit -m "docs: add day002 templates"
+git push origin main
+```
+
+如果 Git 命令无法执行，先确认是否已经安装 Git，并且 Day001 中的 Git 基线已经完成。
+
+---
+
+### 4.10 Day002 最终检查
+
+完成后，项目中应该至少包含：
 
 ```text
-day-template.md
-debug-template.md
-experiment-metadata-template.md
+days/day002/README.md
+docs/day-template.md
+docs/debug-template.md
+docs/experiment-metadata-template.md
 ```
 
-以及：
+可以在 VS Code 左侧文件管理器中直接确认这些文件是否存在。
 
-```text
-README.md
-```
+也可以打开 GitHub 仓库页面，确认这些文件已经同步到远程仓库。
 
-如果能看到这些文件，说明 Day002 的文件结构正确。
+如果这些文件都存在，并且已经提交到 GitHub，Day002 就完成了。
+
 
 ---
 
