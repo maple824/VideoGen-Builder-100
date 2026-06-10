@@ -1,18 +1,27 @@
-from pathlib import Path
+import sys
+
+PROJECT_NAME = "VideoGen-Builder-100"
+DAY = "Day004"
+TOPIC = "Python project entry"
+SCRIPT_NAME = "hello_project.py"
+
+def build_message() -> str:
+    """Build a small, readable status message for Day004."""
+    lines = [
+    f"Project: {PROJECT_NAME}",
+    f"Day: {DAY}",
+    f"Topic: {TOPIC}",
+    f"Python: {sys.version.split()[0]}",
+    f"Script: {SCRIPT_NAME}",
+    "Status: OK",
+    ]
 
 
-def get_project_root() -> Path:
-    """Return the project root directory."""
-    return Path(__file__).resolve().parents[1]
+    return "\n".join(lines)
 
 
 def main() -> None:
-    project_root = get_project_root()
-
-    print("VideoGen-Builder-100")
-    print(f"Project root: {project_root}")
-    print(f"Script file: {Path(__file__).resolve()}")
-
-
+    print(build_message())
+    
 if __name__ == "__main__":
     main()

@@ -122,8 +122,54 @@ https://code.visualstudio.com/docs/getstarted/getting-started
 在开始 Day001 之前，需要先确认本机具备以下前置条件。
 
 ---
+### 前置条件 1: 已安装Python
 
-#### 前置条件 1：已经安装 Git
+Python 是今天必须使用的工具。
+
+检查命令：
+
+```bash
+python --version
+```
+
+如果你的系统使用 `python3`：
+
+```bash
+python3 --version
+```
+
+Windows 也可以尝试：
+
+```bash
+py --version
+```
+
+预期看到类似结果：
+
+```text
+Python 3.x.x
+```
+
+如果未安装或未正确配置，常见现象包括：
+
+```text
+python: command not found
+```
+
+或 Windows 中出现：
+
+```text
+'python' is not recognized as an internal or external command
+```
+
+官方安装资料：
+
+* [Python Downloads](https://www.python.org/downloads/)
+* [Python Setup and Usage](https://docs.python.org/3/using/index.html)
+
+安装后再次运行版本检查命令，确认可以看到 Python 版本号。
+
+#### 前置条件 2：已经安装 Git
 
 Day001 会使用 Git 管理项目版本，并把代码同步到 GitHub。
 
@@ -188,7 +234,7 @@ git --version
 
 ---
 
-#### 前置条件 2：已经安装 Conda 或 Miniconda
+#### 前置条件 3：已经安装 Conda 或 Miniconda
 
 Day001 会创建并激活 Python 环境：
 
@@ -243,7 +289,7 @@ conda --version
 
 ---
 
-#### 前置条件 3：已经有 GitHub 账号
+#### 前置条件 4：已经有 GitHub 账号
 
 Day001 后半部分需要把本地项目推送到 GitHub。
 
@@ -268,28 +314,6 @@ https://docs.github.com/en/repositories/creating-and-managing-repositories/creat
 ```
 
 如果还没有 GitHub 账号，需要先注册账号，再继续执行 GitHub 远程仓库相关步骤。
-
----
-
-#### 前置条件 4：知道自己的本地项目存放位置
-
-本文档会使用下面路径作为示例：
-
-```text
-~/Workspace/VideoGen-Builder-100
-```
-
-这只是示例路径。
-
-你可以把项目放在自己电脑上的任意位置，例如：
-
-```text
-D:\Projects\VideoGen-Builder-100
-```
-
-后续命令中出现的项目路径，需要根据自己的实际情况调整。
-
----
 
 如果以上前置条件都满足，就可以继续 Day001 的项目创建、环境检查和 GitHub 同步流程。
 
